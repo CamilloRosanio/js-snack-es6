@@ -109,8 +109,6 @@ const superSquadre = [
     },
 ]
 
-// CONSOLE LOG DI CONTROLLO
-// console.log(superSquadre);
 
 // Impostazione dei nuovi valori
 superSquadre.forEach(( Team ) => {
@@ -120,19 +118,22 @@ superSquadre.forEach(( Team ) => {
     // In questo caso scrivo la sintassi come "object.property =" senza il nome dell'Array davanti perchè sto già parlando di oggetti al suo interno.
     Team.punti_fatti = randomScore;
     Team.falli_subiti = randomPenalty;
-    
-    
-    // superSquadre.Team.punti_fatti = randomScore;
-    // superSquadre.Team.falli_subiti = randomPenalty;
 })
 
-
+console.log('Array originale:');
 console.log(superSquadre);
 
 
-superSquadre_partial = superSquadre.map(({nome, falli_subiti}) => rest);
+let superSquadre_partial = superSquadre.map(({nome, falli_subiti}) => ({nome, falli_subiti}));
 
+console.log('Array derivato:');
 console.log(superSquadre_partial);
+
+
+
+
+
+
 
 
 /**********************************************************
@@ -144,3 +145,6 @@ Snack 3 (Bonus)
 Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).
 La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
 */
+
+// Per posizione compresa tra i due numeri (discutendone in aula) è stato stabilito che si parli dei numeri tra A e B.
+// Esempio se A=1 e B=3 il valore "contenuto" (compreso) è 3.
