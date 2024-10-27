@@ -10,6 +10,8 @@ Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e pe
 Stampare a schermo la bici con peso minore.
 */
 
+console.log('SNACK 1');
+
 const myArray = [
 
     {
@@ -88,6 +90,8 @@ Generare numeri random al posto degli 0 nelle proprietà "punti" fatti e "falli 
 Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
 */
 
+console.log('SNACK 2');
+
 // Dichiaro il io Array di Objects
 const superSquadre = [
     {
@@ -123,7 +127,7 @@ superSquadre.forEach(( Team ) => {
 console.log('Array originale:');
 console.log(superSquadre);
 
-
+// Creazione di un Array "derivato" con gli stessi objects ma proprietà parziali tramite MAP
 let superSquadre_partial = superSquadre.map(({nome, falli_subiti}) => ({nome, falli_subiti}));
 
 console.log('Array derivato:');
@@ -148,3 +152,31 @@ La funzione ritornerà un nuovo array con i valori che hanno la posizione compre
 
 // Per posizione compresa tra i due numeri (discutendone in aula) è stato stabilito che si parli dei numeri tra A e B.
 // Esempio se A=1 e B=3 il valore "contenuto" (compreso) è 3.
+
+console.log('SNACK 3');
+
+
+// Dichiaro quanto richiesto:
+const numbersBetween = [];
+const numberA = 5;
+const numberB = 15;
+
+// Dichiaro la funzione
+middleValues = (min, max, array) => {
+    let increasingNumber = min + 1;
+
+    for (let i = 0; i < (max - min - 1); i++) {
+        array.push(increasingNumber);
+
+        increasingNumber += 1;
+    }
+
+    return array;
+}
+
+// Richiamo la funzione con i parametri dati all'inizio
+middleValues(numberA, numberB, numbersBetween);
+
+console.log('Numeri compresi:');
+console.log(numbersBetween);
+
