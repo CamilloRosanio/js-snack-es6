@@ -88,11 +88,51 @@ Generare numeri random al posto degli 0 nelle proprietà "punti" fatti e "falli 
 Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
 */
 
+// Dichiaro il io Array di Objects
+const superSquadre = [
+    {
+        nome: 'Rotula Boys',
+        punti_fatti: 0,
+        falli_subiti: 0,
+    },
+
+    {
+        nome: 'Los Gringos',
+        punti_fatti: 0,
+        falli_subiti: 0,
+    },
+
+    {
+        nome: 'Pinuccio Club',
+        punti_fatti: 0,
+        falli_subiti: 0,
+    },
+]
+
+// CONSOLE LOG DI CONTROLLO
+// console.log(superSquadre);
+
+// Impostazione dei nuovi valori
+superSquadre.forEach(( Team ) => {
+    let randomScore = Math.floor(Math.random() * (15 - 0 + 1)) + 0;
+    let randomPenalty = Math.floor(Math.random() * (15 - 0 + 1)) + 0;
+
+    // In questo caso scrivo la sintassi come "object.property =" senza il nome dell'Array davanti perchè sto già parlando di oggetti al suo interno.
+    Team.punti_fatti = randomScore;
+    Team.falli_subiti = randomPenalty;
+    
+    
+    // superSquadre.Team.punti_fatti = randomScore;
+    // superSquadre.Team.falli_subiti = randomPenalty;
+})
 
 
+console.log(superSquadre);
 
 
+superSquadre_partial = superSquadre.map(({nome, falli_subiti}) => rest);
 
+console.log(superSquadre_partial);
 
 
 /**********************************************************
