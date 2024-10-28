@@ -39,7 +39,16 @@ const myArray = [
         getPeso: function () {
             return this.peso
         }
-    }
+    },
+
+    {
+        nome: 'biciletta4',
+        peso: 2,
+
+        getPeso: function () {
+            return this.peso
+        }
+    },
 ];
 
 // Stampa diretta
@@ -49,12 +58,15 @@ const myArray = [
 // Scrivo una funzione per stampare il peso minore
 
 findMinWeight = (array) => {
-    // Dichiaro un Array dove pusherò i vari pesi
+    // Dichiaro un Array dove pusherò i vari pesi e una variabile a cui assegnerò l'Index dell'object interessato.
+    let functionArray = array;
     let pesoArray =[];
 
+    let interestedIndex;
+
     // FOR EACH elemento (object in questo caso) nell'array, pusho il valore di "peso" nel nuovo Array
-    array.forEach((bicicletta)=>{
-        pesoArray.push(bicicletta.peso);
+    array.forEach((item) => {
+        pesoArray.push(item.peso);
     })
 
     // Ottengo il valore minimo tramite Math sul nuovo Array
@@ -64,12 +76,27 @@ findMinWeight = (array) => {
     // console.log(pesoArray);
     // console.log('Peso minore: ' + pesoMin);
 
-    return pesoMin;
+    // FOR EACH elemento nell'array
+    array.forEach((item) => {
+        
+        // SE il value della property "peso" coincide con il minimo individuato
+        if (item.peso == pesoMin) {
+
+            // Salvo l'Index di quell'item in una variabile
+            interestedIndex = functionArray.indexOf(item);
+        }
+    })
+
+    // Il risultato della funzione sarà l'Index dell'Item interessato
+    return interestedIndex;
 }
 
 // Richiamo la funzione
-const pesoMinimo = findMinWeight(myArray);
-console.log('La bicicletta che pesa di meno pesa: ' + pesoMinimo + ' Kg');
+const interestedItem = findMinWeight(myArray);
+console.log('La bicicletta che pesa di meno è: ');
+console.log(myArray[interestedItem]);
+
+
 
 
 
@@ -124,13 +151,13 @@ superSquadre.forEach(( Team ) => {
     Team.falli_subiti = randomPenalty;
 })
 
-console.log('Array originale:');
+console.log('Squadre con punteggi originali:');
 console.log(superSquadre);
 
 // Creazione di un Array "derivato" con gli stessi objects ma proprietà parziali tramite MAP
 let superSquadre_partial = superSquadre.map(({nome, falli_subiti}) => ({nome, falli_subiti}));
 
-console.log('Array derivato:');
+console.log('Array derivato con solo Nome e Falli Subiti:');
 console.log(superSquadre_partial);
 
 
@@ -158,8 +185,8 @@ console.log('SNACK 3');
 
 // Dichiaro quanto richiesto:
 const numbersBetween = [];
-const numberA = 5;
-const numberB = 15;
+const numberA = 9;
+const numberB = 27;
 
 // Dichiaro la funzione
 middleValues = (min, max, array) => {
@@ -177,6 +204,6 @@ middleValues = (min, max, array) => {
 // Richiamo la funzione con i parametri dati all'inizio
 middleValues(numberA, numberB, numbersBetween);
 
-console.log('Numeri compresi:');
+console.log('Numeri compresi tra i due estremi:');
 console.log(numbersBetween);
 
