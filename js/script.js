@@ -17,37 +17,21 @@ const myArray = [
     {
         nome: 'biciletta1',
         peso: 10,
-
-        getPeso: function () {
-            return this.peso
-        }
     },
 
     {
         nome: 'biciletta2',
         peso: 5,
-        
-        getPeso: function () {
-            return this.peso
-        }
     },
 
     {
         nome: 'biciletta3',
         peso: 19,
-
-        getPeso: function () {
-            return this.peso
-        }
     },
 
     {
         nome: 'biciletta4',
         peso: 2,
-
-        getPeso: function () {
-            return this.peso
-        }
     },
 ];
 
@@ -55,7 +39,7 @@ const myArray = [
 // console.log('Stampa diretta del peso della bicicletta più leggera: ' + myArray[1].peso);
 
 
-// Scrivo una funzione per stampare il peso minore
+// Scrivo una funzione per stampare l'indice della bicicletta col peso minore
 
 findMinWeight = (array) => {
     // Dichiaro un Array dove pusherò i vari pesi e una variabile a cui assegnerò l'Index dell'object interessato.
@@ -91,7 +75,7 @@ findMinWeight = (array) => {
     return interestedIndex;
 }
 
-// Richiamo la funzione
+// Richiamo la funzione e stampo
 const interestedItem = findMinWeight(myArray);
 console.log('La bicicletta che pesa di meno è: ');
 console.log(myArray[interestedItem]);
@@ -111,7 +95,7 @@ console.log(myArray[interestedItem]);
 /*
 Snack 2
 Creare un array di oggetti di squadre di calcio.
- Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
+Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
 Nome sarà l'unica proprietà da compilare, le altre saranno tutte settate a 0.
 Generare numeri random al posto degli 0 nelle proprietà "punti" fatti e "falli subiti".
 Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
@@ -119,7 +103,7 @@ Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subit
 
 console.log('SNACK 2');
 
-// Dichiaro il io Array di Objects
+// Dichiaro il mio Array di Objects
 const superSquadre = [
     {
         nome: 'Rotula Boys',
@@ -151,13 +135,13 @@ superSquadre.forEach(( Team ) => {
     Team.falli_subiti = randomPenalty;
 })
 
-console.log('Squadre con punteggi originali:');
+console.log('Squadre Array originale:');
 console.log(superSquadre);
 
 // Creazione di un Array "derivato" con gli stessi objects ma proprietà parziali tramite MAP
 let superSquadre_partial = superSquadre.map(({nome, falli_subiti}) => ({nome, falli_subiti}));
 
-console.log('Array derivato con solo Nome e Falli Subiti:');
+console.log('Array derivato con solo Nome Squadra e Falli Subiti:');
 console.log(superSquadre_partial);
 
 

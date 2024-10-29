@@ -63,6 +63,15 @@ const bicchiere = {
     },
 }
 
+
+// OBJECT CONST/LET
+// Un oggetto di può anche dichiarare come una CONST
+
+const thisIsMyObject = {
+    peso: 10,
+    nome: 'abcdefg',
+}
+
 // La stampa dell'oggetto mi rende tutte le sue proprietà in ordine ALFABETICO, a differenza dell'Array che invece si basa sulla posizione degli elementi
 console.log('Stampare il mio OGGETTO (vedi sotto)');
 console.log(bicchiere);
