@@ -138,9 +138,31 @@ superSquadre.forEach(( Team ) => {
 console.log('Squadre Array originale:');
 console.log(superSquadre);
 
-// Creazione di un Array "derivato" con gli stessi objects ma proprietà parziali tramite MAP
-let superSquadre_partial = superSquadre.map(({nome, falli_subiti}) => ({nome, falli_subiti}));
+// METODO 1 || MAP: Creazione di un Array "derivato" con gli stessi objects ma proprietà parziali
+// let superSquadre_partial = superSquadre.map(({nome, falli_subiti}) => ({nome, falli_subiti}));
 
+
+// METODO 2 || DESTRUCTURE + PUSH - Push delle caratteristiche nell'oggetto del nuovo array
+let superSquadre_partial = [];
+
+superSquadre.forEach(( Team ) => {
+    
+    // Destrutturo il current Team
+    const {nome, falli_subiti} = Team
+    
+    // Dichiaro che il nuovo object abbia come campi le properties destrutturate dall'oggetto dell'Array originale
+    const partialTeam = {
+        nome_nuovo_obj: nome,
+        falli_subiti_nuovo_obj: falli_subiti,
+    }
+
+    // Pusho il nuovo oggetto nel mio nuovo Array
+    superSquadre_partial.push({nome, falli_subiti});
+})
+
+
+
+// Stampo il risultato
 console.log('Array derivato con solo Nome Squadra e Falli Subiti:');
 console.log(superSquadre_partial);
 
